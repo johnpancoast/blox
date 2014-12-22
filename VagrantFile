@@ -7,7 +7,7 @@ VAGRANTFILE_API_VERSION = "2"
 NAME = "blox"
 
 # app ip
-IP = "192.168.10.10"
+IP = "192.168.10.11"
 
 # app domain name (for web server)
 DOMAIN_NAME = "blox.local"
