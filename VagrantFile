@@ -1,0 +1,54 @@
+# -*- mode: ruby -*-
+# vi: set ft=ruby :
+
+VAGRANTFILE_API_VERSION = "2"
+
+# app name
+NAME = "blox"
+
+# app ip
+IP = "192.168.10.10"
+
+# app domain name (for web server)
+DOMAIN_NAME = "blox.local"
+
+# app directory (for share, app path)
+APP_DIRECTORY = "/vagrant"
+
+# app web directory (web server path)
+# note that the provisioner (typically a bash provisioner for our case)
+# may not use this. It depends on if a web server is used which isn't always
+# the case (node for e.g.,)
+APP_WEB_DIRECTORY = APP_DIRECTORY
+
+# web server email (where relevant)
+WEB_SERVER_EMAIL = "support@" + DOMAIN_NAME
+
+Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
+  config.vm.box = "chef/centos-6.5"
+  config.vm.synced_folder ".", APP_DIRECTORY, id: "vagrant-root", nfs: true
+
+  # SPECIFIC TO THIS WEBSITE
+  config.vm.provider "virtualbox" do |v|
+    v.name = NAME
+    v.memory = 4096
+  end
+  config.vm.provider "vmware_fusion" do |v|
+    v.vmx["displayName"] = NAME
+    v.vmx["memsize"] = "4096"
+  end
+  config.vm.hostname = DOMAIN_NAME
+  config.vm.network :private_network, ip: IP
+
+  # copy vhost template
+  config.vm.provision "file", source: "vagrant/templates/vhost.conf", destination: "templates/vhost.conf"
+
+  # copy xdebug ini
+  config.vm.provision "file", source: "vagrant/templates/xdebug.ini", destination: "templates/xdebug.ini"
+
+  # provision
+  config.vm.provision :shell do |s|
+    s.path = "vagrant/provisioners/main.sh"
+    s.args = [DOMAIN_NAME, APP_WEB_DIRECTORY, WEB_SERVER_EMAIL]
+  end
+end
