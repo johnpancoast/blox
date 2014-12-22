@@ -28,15 +28,11 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.box = "chef/centos-6.5"
   config.vm.synced_folder ".", APP_DIRECTORY, id: "vagrant-root", nfs: true
 
-  # SPECIFIC TO THIS WEBSITE
   config.vm.provider "virtualbox" do |v|
     v.name = NAME
     v.memory = 4096
   end
-  config.vm.provider "vmware_fusion" do |v|
-    v.vmx["displayName"] = NAME
-    v.vmx["memsize"] = "4096"
-  end
+
   config.vm.hostname = DOMAIN_NAME
   config.vm.network :private_network, ip: IP
 
