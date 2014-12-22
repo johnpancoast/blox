@@ -1,2 +1,4 @@
 /.vagrant
 /vendor
+/app/cache
+/app/log
