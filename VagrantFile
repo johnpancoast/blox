@@ -25,8 +25,13 @@ APP_WEB_DIRECTORY = APP_DIRECTORY + "/web"
 WEB_SERVER_EMAIL = "support@" + DOMAIN_NAME
 
 Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
+  # set uid and gid to cur user
+  config.nfs.map_uid = Process.uid
+  config.nfs.map_gid = Process.gid
+
   config.vm.box = "chef/centos-6.5"
   config.vm.synced_folder ".", APP_DIRECTORY, id: "vagrant-root", nfs: true
+  #config.vm.synced_folder ".", APP_DIRECTORY, id: "vagrant-root", mount_options: ["dmode=2775", "fmode=664"]
 
   config.vm.provider "virtualbox" do |v|
     v.name = NAME
@@ -37,14 +42,14 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.network :private_network, ip: IP
 
   # copy vhost template
-  config.vm.provision "file", source: "vagrant/templates/vhost.conf", destination: "templates/vhost.conf"
+  config.vm.provision "file", source: File.dirname(__FILE__) + "/vagrant/templates/vhost.conf", destination: "templates/vhost.conf"
 
   # copy xdebug ini
-  config.vm.provision "file", source: "vagrant/templates/xdebug.ini", destination: "templates/xdebug.ini"
+  config.vm.provision "file", source: File.dirname(__FILE__) + "/vagrant/templates/xdebug.ini", destination: "templates/xdebug.ini"
 
   # provision
   config.vm.provision :shell do |s|
     s.path = "vagrant/provisioners/main.sh"
-    s.args = [DOMAIN_NAME, APP_WEB_DIRECTORY, WEB_SERVER_EMAIL]
+    s.args = [DOMAIN_NAME, APP_WEB_DIRECTORY, WEB_SERVER_EMAIL, config.nfs.map_uid, config.nfs.map_gid]
   end
 end
