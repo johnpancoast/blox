@@ -19,7 +19,7 @@ APP_DIRECTORY = "/vagrant"
 # note that the provisioner (typically a bash provisioner for our case)
 # may not use this. It depends on if a web server is used which isn't always
 # the case (node for e.g.,)
-APP_WEB_DIRECTORY = APP_DIRECTORY
+APP_WEB_DIRECTORY = APP_DIRECTORY + "/web"
 
 # web server email (where relevant)
 WEB_SERVER_EMAIL = "support@" + DOMAIN_NAME
