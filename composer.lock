@@ -4,7 +4,7 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "b9d5a410f0c71fa7dff4f9dd38b0ae77",
+    "hash": "935d861626a7f1690b2cfc7a3d23eb8c",
     "packages": [
         {
             "name": "doctrine/annotations",
@@ -1144,6 +1144,39 @@
             "time": "2014-07-19 10:52:35"
         },
         {
+            "name": "shideon/deta",
+            "version": "0.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/shideon/deta.git",
+                "reference": "21257a84665af79ecd7b9ae551dbd557c145b265"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/shideon/deta/zipball/21257a84665af79ecd7b9ae551dbd557c145b265",
+                "reference": "21257a84665af79ecd7b9ae551dbd557c145b265",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.4.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Deta\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "authors": [
+                {
+                    "name": "John Pancoast",
+                    "email": "shideon@gmail.com"
+                }
+            ],
+            "description": "A small PHP library for organizing a model layer",
+            "time": "2014-12-28 05:45:02"
+        },
+        {
             "name": "swiftmailer/swiftmailer",
             "version": "v5.3.0",
             "source": {
@@ -1657,6 +1690,7 @@
         "symfony/symfony": 20
     },
     "prefer-stable": false,
+    "prefer-lowest": false,
     "platform": {
         "php": ">=5.3.3"
     },
