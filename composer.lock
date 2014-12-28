@@ -4,7 +4,7 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "935d861626a7f1690b2cfc7a3d23eb8c",
+    "hash": "b9d1cc5538977e4252594fba7f89c68d",
     "packages": [
         {
             "name": "doctrine/annotations",
@@ -1145,16 +1145,16 @@
         },
         {
             "name": "shideon/deta",
-            "version": "0.1.0",
+            "version": "0.2.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/shideon/deta.git",
-                "reference": "21257a84665af79ecd7b9ae551dbd557c145b265"
+                "reference": "347a0bcb4b0761e50e9575040f3421a1c8a279d5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/shideon/deta/zipball/21257a84665af79ecd7b9ae551dbd557c145b265",
-                "reference": "21257a84665af79ecd7b9ae551dbd557c145b265",
+                "url": "https://api.github.com/repos/shideon/deta/zipball/347a0bcb4b0761e50e9575040f3421a1c8a279d5",
+                "reference": "347a0bcb4b0761e50e9575040f3421a1c8a279d5",
                 "shasum": ""
             },
             "require": {
@@ -1174,7 +1174,7 @@
                 }
             ],
             "description": "A small PHP library for organizing a model layer",
-            "time": "2014-12-28 05:45:02"
+            "time": "2014-12-28 19:22:25"
         },
         {
             "name": "swiftmailer/swiftmailer",
