@@ -45,7 +45,7 @@ sudo chkconfig mysqld on
 
 # install php 5.5
 echo -e "\nPROVISIONER: install php 5.5\n"
-sudo yum install -v php55w php55w-opcache php55w-devel php55w-mysql php55w-gd php55w-xml php55w-mcrypt php55w-pear php55w-soap -y
+sudo yum install -v php55w php55w-opcache php55w-devel php55w-mysql php55w-gd php55w-xml php55w-mcrypt php55w-pear php55w-soap php55w-mbstring -y
 sudo sed -i 's/;date.timezone =/date.timezone = UTC/g' /etc/php.ini
 sudo sed -i 's/memory_limit = 128M/memory_limit = 256M/g' /etc/php.ini
 
