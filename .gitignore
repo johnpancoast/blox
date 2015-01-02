@@ -38,3 +38,6 @@
 
 # vagrant
 /.vagrant
+
+# phpstorm
+/.idea
