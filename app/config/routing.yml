@@ -4,4 +4,3 @@ fos_user:
 shideon_blox:
     resource: "@ShideonBloxBundle/Resources/config/routing.yml"
     prefix:   /
-
