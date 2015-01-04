@@ -4,7 +4,7 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "716e0ad4b01985e0b59c09a04616077d",
+    "hash": "8470ddb778981098a88f665311500e87",
     "packages": [
         {
             "name": "doctrine/annotations",
@@ -1223,19 +1223,24 @@
         },
         {
             "name": "shideon/blox-bundle",
-            "version": "0.1.2",
+            "version": "dev-master",
             "source": {
                 "type": "git",
                 "url": "https://github.com/shideon/blox-bundle.git",
-                "reference": "03fd1acfff442d8b130f1cedd5826a44012fb083"
+                "reference": "a0f884a26fcdcdfde086d56ca1e8b5cb9969fa04"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/shideon/blox-bundle/zipball/03fd1acfff442d8b130f1cedd5826a44012fb083",
-                "reference": "03fd1acfff442d8b130f1cedd5826a44012fb083",
+                "url": "https://api.github.com/repos/shideon/blox-bundle/zipball/a0f884a26fcdcdfde086d56ca1e8b5cb9969fa04",
+                "reference": "a0f884a26fcdcdfde086d56ca1e8b5cb9969fa04",
                 "shasum": ""
             },
             "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "Shideon\\BloxBundle\\": "src/"
+                }
+            },
             "license": [
                 "MIT"
             ],
@@ -1247,10 +1252,10 @@
             ],
             "description": "A simple content manager as a symfony bundle",
             "support": {
-                "source": "https://github.com/shideon/blox-bundle/tree/0.1.2",
+                "source": "https://github.com/shideon/blox-bundle/tree/master",
                 "issues": "https://github.com/shideon/blox-bundle/issues"
             },
-            "time": "2015-01-04 03:30:25"
+            "time": "2015-01-04 03:45:35"
         },
         {
             "name": "swiftmailer/swiftmailer",
@@ -1764,6 +1769,7 @@
     "minimum-stability": "stable",
     "stability-flags": {
         "symfony/symfony": 20,
+        "shideon/blox-bundle": 20,
         "friendsofsymfony/user-bundle": 20
     },
     "prefer-stable": false,

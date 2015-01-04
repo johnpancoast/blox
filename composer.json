@@ -18,7 +18,7 @@
         "sensio/distribution-bundle": "~3.0",
         "sensio/framework-extra-bundle": "~3.0",
         "incenteev/composer-parameter-handler": "~2.0",
-        "shideon/blox-bundle": "~0.1",
+        "shideon/blox-bundle": "dev-master",
         "friendsofsymfony/user-bundle": "~2.0@dev"
     },
     "require-dev": {
