@@ -162,6 +162,11 @@ sudo sed -i "s|{{DOMAIN}}|$DOMAIN_NAME|g" /etc/httpd/conf.d/$DOMAIN_NAME.conf
 sudo sed -i "s|{{DIRECTORY}}|$WEB_DIRECTORY|g" /etc/httpd/conf.d/$DOMAIN_NAME.conf
 sudo sed -i "s|{{EMAIL}}|$WEB_SERVER_EMAIL|g" /etc/httpd/conf.d/$DOMAIN_NAME.conf
 
+# create db
+echo -e "\nPROVISIONER: Create database\n"
+/vagrant/app/console doctrine:database:create
+/vagrant/app/console doctrine:schema:create
+
 ####################################
 ### SERVICES                       #
 ### Initialize needed services     #
