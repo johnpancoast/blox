@@ -18,7 +18,7 @@
         "sensio/distribution-bundle": "~3.0",
         "sensio/framework-extra-bundle": "~3.0",
         "incenteev/composer-parameter-handler": "~2.0",
-        "shideon/deta": "~0.2",
+        "shideon/blox-bundle": "~0.1",
         "friendsofsymfony/user-bundle": "~2.0@dev"
     },
     "require-dev": {
@@ -58,5 +58,11 @@
         "branch-alias": {
             "dev-master": "2.6-dev"
         }
-    }
+    },
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "git@github.com:shideon/blox-bundle.git"
+        }
+    ]
 }
