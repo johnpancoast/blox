@@ -19,7 +19,9 @@
         "sensio/framework-extra-bundle": "~3.0",
         "incenteev/composer-parameter-handler": "~2.0",
         "shideon/blox-bundle": "dev-master",
-        "friendsofsymfony/user-bundle": "~2.0@dev"
+        "shideon/precept": "@dev",
+        "friendsofsymfony/user-bundle": "~2.0@dev",
+        "raphhh/trex": "dev-master#3c0e8477a7afaeaa4e7d41d23ce69b93f61f79d5"
     },
     "require-dev": {
         "sensio/generator-bundle": "~2.3"
@@ -59,10 +61,5 @@
             "dev-master": "2.6-dev"
         }
     },
-    "repositories": [
-        {
-            "type": "vcs",
-            "url": "git@github.com:shideon/blox-bundle.git"
-        }
-    ]
+    "prefer-stable": true
 }
